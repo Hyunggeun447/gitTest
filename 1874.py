@@ -27,3 +27,4 @@ if answer[-1]=='NO':
 else:
     for i in answer:
         print(i)
+        # 커밋 공부
