@@ -1,16 +1,17 @@
-# 수 정렬하기2
+# 수 정렬하기 3
 
 import sys
 input = sys.stdin.readline
 
 n = int(input())
 
-lst=[]
+lst=[0 for _ in range(100_000)]
 
 for _ in range(n):
-    lst.append(int(input()))
+    k= int( input())
+    lst[k]+=1
 
-lst=sorted(lst)
-
-for i in lst:
-    print(i)
+for i in range(100_000):
+    if lst[i] != 0:
+        for _ in range(lst[i]):
+            print(i)
