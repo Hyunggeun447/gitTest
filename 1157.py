@@ -13,7 +13,7 @@ for i in word:
         dict[i.upper()]=0
     dict[i.upper()]+=1
 
-print(dict)
+# print(dict)
 
 count=0
 ans=""
@@ -23,4 +23,4 @@ for key, value in dict.items():
         ans=key
     elif value == count:
         ans="?"
-print(ans,value)
+print(ans)
