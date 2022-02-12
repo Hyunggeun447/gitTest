@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch ArrayEx14",
+            "request": "launch",
+            "mainClass": "ArrayEx14",
+            "projectName": "gitTest_e08d0a20"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
