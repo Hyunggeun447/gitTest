@@ -1,19 +1,41 @@
 # 토마토
+
+import re
 import sys
-input=sys.stdin.readline
+from collections import deque
 
-x , y = map(int, input().split())
+input = sys.stdin.readline
 
-tomato=[]
-for _ in range(y):
-    tomato.append(input().rsplit())
+m , n = map(int, input().split())
+lst= [list(map(int, input().split())) for _ in range(n)]
 
+dq = deque()
 
-for i in range(x):
-    for j in range(y):
-        tomato[j][i]=int(tomato[j][i])
-print(tomato)
+dx , dy = [-1,1,0,0] , [0,0,-1,1]
 
-k=2
-while True:
-    for i
+for i in range(n):
+    for j in range(m):
+        if lst[i][j] == 1:
+            dq.append([i,j])
+
+def tomato():
+    while dq:
+        x,y = dq.popleft()
+
+        for i in range(4):
+            nx, ny = dx[i]+x, dy[i]+y
+            if 0<=nx<n and 0<=ny<m and lst[nx][ny] == 0:
+                lst[nx][ny] = lst[x][y]+1
+                dq.append([nx,ny])
+
+ans = 0
+tomato()
+for i in lst:
+    for j in i:
+        if j==0:
+            print(-1)
+            exit(0)
+    
+    ans= max(ans,max(i))
+
+print(ans-1)
