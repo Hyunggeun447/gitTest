@@ -1,24 +1,19 @@
 import sys
-ch=str(input())
-ch_list=list(ch)
-for i in range(len(ch)):
-    ch_list[i]=int(ch_list[i])
-k=int(input())
+input = sys.stdin.readline
+target = int(input())
+n = int(input())
+broken = list(map(int, input().split()))
 
-num_break=sys.stdin.readline().rsplit()
+min_count = abs(100 - target)
 
-for i in range(len(num_break)):
-    num_break[i]=int(num_break[i])
+for nums in range(target,1000001):
+    nums = str(nums)
+    
+    for j in range(len(nums)):
+        if int(nums[j]) in broken:
+            break
 
-for i in range(len(ch)):
-    while True:
-        num=ch_list[i]
-        if num in num_break:
-            num_1=
+        elif j == len(nums) - 1:
+            min_count = min(min_count, abs(int(nums) - target) + len(nums))
             
-
-
-        
-
-print(ch)
-print(num_break)
+print(min_count)
